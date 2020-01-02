@@ -62,17 +62,3 @@ console.log(son.look('TV')); // father正在看TV
 
 // 寄生组合式继承
 // 核心：通过寄生方式，去掉父类的实例属性，这样，在调用两次父类的构造的时候，就不会初始化两次实例方法/属性，避免的组合继承的缺点
-function Son() {
-    Father.call(this);
-}
-Son.prototype = createObject(Father.prototype);
-Son.prototype.constructor = Son;
-function createObject(o) {
-    function fn() {}
-    fn.prototype = o;
-    return new fn();
-}
-
-var son = new Son();
-console.log(son.sleep()); // father正在睡觉
-console.log(son.look('TV')); // father正在看TV
