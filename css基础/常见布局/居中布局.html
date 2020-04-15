@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .warp-root{
+            width: 800px;
+            height:600px;
+            background-color: blueviolet;
+        }
+        .content-root{
+            width:200px;
+            height:200px;
+            background-color: brown;
+        }
+        /* 定位 + transform */
+        .warp{
+            position: relative;
+        }
+        .content{
+            position: absolute;
+            top: 50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+        }
+
+        /* 利用table-cell特性 */
+        /* .warp{
+            display: table-cell;
+            vertical-align: middle;
+        }
+        .content{
+            margin: 0 auto;
+        } */
+
+        /* flex布局 */
+        /* .warp{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        } */
+    </style>
+</head>
+<body>
+    <div class="warp-root warp">
+        <div class="content-root content"></div>
+    <div>
+</body>
+</html>
