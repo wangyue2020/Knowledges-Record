@@ -5,33 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        /* 圣杯布局：两侧宽度固定，中间自适应 */
-        .left,.center,.right{
-            height: 300px;
+        .warp{
+            padding-left: 200px;
+            padding-right: 200px;
         }
-        /* 左右浮动，中间元素使用margin */
+        .warp div{
+            float: left;
+            height: 300px;
+            position: relative;
+        }
+        .center{
+            width: 100%;
+            background-color: lightcoral;
+        }
         .left{
             width: 200px;
             background-color: brown;
-            float: left;
-        }
-        .center{
-            margin-left: 200px;
-            margin-right: 200px;
-            background-color: lightcoral;
-        }
+            /* 百分比相较于父元素 向上爬升1层 */
+            margin-left: -100%;   
+            left: -200px;
+        }      
         .right{
             width: 200px;
-            background-color: lightslategray;
-            float: right;
-        }
+            background-color: yellowgreen;
+            margin-right: -200px;
+        } 
     </style>
 </head>
 <body>
     <div class="warp">
+        <div class="center"></div>
         <div class="left"></div>
         <div class="right"></div>
-        <div class="center"></div>
     </div>
 </body>
 </html>
